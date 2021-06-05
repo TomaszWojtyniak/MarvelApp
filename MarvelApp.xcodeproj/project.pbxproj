@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		40270F17266A44E800556FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F16266A44E800556FA6 /* AppDelegate.swift */; };
 		40270F19266A44E800556FA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F18266A44E800556FA6 /* SceneDelegate.swift */; };
-		40270F1B266A44E800556FA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F1A266A44E800556FA6 /* ViewController.swift */; };
 		40270F1E266A44E800556FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40270F1C266A44E800556FA6 /* Main.storyboard */; };
 		40270F20266A44F400556FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40270F1F266A44F400556FA6 /* Assets.xcassets */; };
 		40270F23266A44F400556FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40270F21266A44F400556FA6 /* LaunchScreen.storyboard */; };
 		40270F2E266A44F500556FA6 /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F2D266A44F500556FA6 /* MarvelAppTests.swift */; };
 		40270F39266A44F500556FA6 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F38266A44F500556FA6 /* MarvelAppUITests.swift */; };
+		40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E25708266B981900D8B0A8 /* ComicsViewController.swift */; };
+		40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		40270F13266A44E800556FA6 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40270F16266A44E800556FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40270F18266A44E800556FA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40270F1A266A44E800556FA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40270F1D266A44E800556FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40270F1F266A44F400556FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40270F22266A44F400556FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		40270F34266A44F500556FA6 /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40270F38266A44F500556FA6 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		40270F3A266A44F500556FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40E25708266B981900D8B0A8 /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
+		40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				40270F16266A44E800556FA6 /* AppDelegate.swift */,
 				40270F18266A44E800556FA6 /* SceneDelegate.swift */,
-				40270F1A266A44E800556FA6 /* ViewController.swift */,
 				40270F1C266A44E800556FA6 /* Main.storyboard */,
+				40E25708266B981900D8B0A8 /* ComicsViewController.swift */,
+				40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */,
 				40270F1F266A44F400556FA6 /* Assets.xcassets */,
 				40270F21266A44F400556FA6 /* LaunchScreen.storyboard */,
 				40270F24266A44F400556FA6 /* Info.plist */,
@@ -190,6 +193,9 @@
 		40270F0B266A44E800556FA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					123,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -258,8 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40270F1B266A44E800556FA6 /* ViewController.swift in Sources */,
 				40270F17266A44E800556FA6 /* AppDelegate.swift in Sources */,
+				40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */,
+				40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */,
 				40270F19266A44E800556FA6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
