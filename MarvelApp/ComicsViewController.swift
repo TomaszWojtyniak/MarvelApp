@@ -14,43 +14,51 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 10
     }
     
-    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComicsCell") as! ComicsTableViewCell
-        cell.comicsTitle.text = "title"
-        cell.comicsWriter.text = "writer"
+
+        cell.ComicsView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.ComicsView.layer.shadowColor = UIColor.black.cgColor
+        cell.ComicsView.layer.shadowRadius = 10
+
+        cell.ComicsView.layer.shadowOpacity = 0.05
+        cell.ComicsView.layer.masksToBounds = false;
+        cell.ComicsView.clipsToBounds = false;
+        
+        
+        
+        cell.comicsTitle.text = "Star wars clone wars"
+        cell.comicsWriter.text = "written by tomasz"
         cell.comicsDescription.sizeToFit()
         cell.comicsDescription.text = "Jen Walters used to fight for justice in the courtroom as a lawyer and outside of it as the super hero known as She-Hulk. But after the events of Civil War, Jen's Hulk persona has changed."
-        
-        
-        
+
         return cell
     }
     
     
     @IBOutlet var ComicsTableView: UITableView!
 
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ComicsTableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: "ComicsCell")
+
         ComicsTableView.delegate = self
         ComicsTableView.dataSource = self
-        ComicsTableView.translatesAutoresizingMaskIntoConstraints = false
         
+        ComicsTableView.separatorStyle = .none
+        ComicsTableView.showsVerticalScrollIndicator = false
         
-        
-        
-        
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 300
     }
-
     
+
     /*
     // MARK: - Navigation
 

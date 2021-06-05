@@ -26,58 +26,69 @@
                                 <rect key="frame" x="16" y="128" width="358" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ComicsCell" id="axY-y2-DAO" customClass="ComicsTableViewCell" customModule="MarvelApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="358" height="146"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ComicsCell" rowHeight="300" id="axY-y2-DAO" customClass="ComicsTableViewCell" customModule="MarvelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="358" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axY-y2-DAO" id="MMW-wU-gge" customClass="ComicsTableViewCell" customModule="MarvelApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="146"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axY-y2-DAO" id="MMW-wU-gge">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OTY-Fh-Vme">
-                                                    <rect key="frame" x="135" y="16" width="203" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ncd-q9-u0t">
-                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="146"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufk-Iq-p1G">
+                                                    <rect key="frame" x="10" y="10" width="338" height="280"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-Fh-Vme">
+                                                            <rect key="frame" x="132" y="8.0000000000000018" width="198" height="28.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ncd-q9-u0t">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="280"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="128" id="6xi-S7-Tdt"/>
+                                                                <constraint firstAttribute="width" constant="120" id="wet-IH-4Os"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="writer by ananana" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uX-FT-aPQ">
+                                                            <rect key="frame" x="132" y="44.666666666666664" width="107.66666666666669" height="15.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-It-hUJ">
+                                                            <rect key="frame" x="132" y="68.333333333333329" width="198" height="203.66666666666669"/>
+                                                            <string key="text">Jen Walters used to fight for justice in the courtroom as a lawyer and outside of it as the super hero known as She-Hulk. But after the events of Civil War, Jen's Hulk persona has changed.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="126" id="wet-IH-4Os"/>
+                                                        <constraint firstItem="5uX-FT-aPQ" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="375-tQ-4qx"/>
+                                                        <constraint firstItem="Ncd-q9-u0t" firstAttribute="top" secondItem="ufk-Iq-p1G" secondAttribute="top" id="3hp-4b-lg3"/>
+                                                        <constraint firstItem="OTY-Fh-Vme" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="DUJ-ny-WSE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OTY-Fh-Vme" secondAttribute="trailing" constant="8" id="Iwz-xq-rpW"/>
+                                                        <constraint firstItem="eUR-It-hUJ" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="K6K-ga-Yd8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eUR-It-hUJ" secondAttribute="trailing" constant="8" id="Lqh-vu-fkK"/>
+                                                        <constraint firstItem="5uX-FT-aPQ" firstAttribute="top" secondItem="OTY-Fh-Vme" secondAttribute="bottom" constant="8" id="ORv-4H-Hlf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eUR-It-hUJ" secondAttribute="bottom" constant="8" id="Qhe-8C-xbI"/>
+                                                        <constraint firstItem="Ncd-q9-u0t" firstAttribute="leading" secondItem="ufk-Iq-p1G" secondAttribute="leading" id="aEk-p2-nvi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ncd-q9-u0t" secondAttribute="bottom" id="hgj-8V-jYJ"/>
+                                                        <constraint firstItem="OTY-Fh-Vme" firstAttribute="top" secondItem="ufk-Iq-p1G" secondAttribute="top" constant="8" id="nYO-oB-X8R"/>
+                                                        <constraint firstItem="eUR-It-hUJ" firstAttribute="top" secondItem="5uX-FT-aPQ" secondAttribute="bottom" constant="8" id="xhJ-Nh-V0S"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="writer by ananana" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5uX-FT-aPQ">
-                                                    <rect key="frame" x="135" y="53" width="203" height="13"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUR-It-hUJ">
-                                                    <rect key="frame" x="134" y="74" width="204" height="53"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Jen Walters used to fight for justice in the courtroom as a lawyer and outside of it as the super hero known as She-Hulk. But after the events of Civil War, Jen's Hulk persona has changed.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OTY-Fh-Vme" firstAttribute="leading" secondItem="MMW-wU-gge" secondAttribute="leading" constant="135" id="57M-TJ-Vah"/>
-                                                <constraint firstItem="5uX-FT-aPQ" firstAttribute="top" secondItem="OTY-Fh-Vme" secondAttribute="bottom" constant="8" id="K8C-FT-mZz"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="eUR-It-hUJ" secondAttribute="bottom" constant="8" id="Nct-uR-Lwn"/>
-                                                <constraint firstItem="Ncd-q9-u0t" firstAttribute="top" secondItem="MMW-wU-gge" secondAttribute="top" id="Qvm-bH-0go"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ncd-q9-u0t" secondAttribute="bottom" id="RR5-Xi-aLr"/>
-                                                <constraint firstItem="5uX-FT-aPQ" firstAttribute="leading" secondItem="MMW-wU-gge" secondAttribute="leading" constant="135" id="Vuw-wS-mPY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="232" id="bIg-7n-kqL"/>
-                                                <constraint firstItem="eUR-It-hUJ" firstAttribute="top" secondItem="5uX-FT-aPQ" secondAttribute="bottom" constant="8" symbolic="YES" id="hJB-xv-AwS"/>
-                                                <constraint firstItem="OTY-Fh-Vme" firstAttribute="top" secondItem="MMW-wU-gge" secondAttribute="top" constant="16" id="otN-W6-Nxs"/>
-                                                <constraint firstItem="eUR-It-hUJ" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="8" symbolic="YES" id="tMl-Pj-dBf"/>
-                                                <constraint firstItem="Ncd-q9-u0t" firstAttribute="leading" secondItem="MMW-wU-gge" secondAttribute="leading" id="y99-4o-1sc"/>
+                                                <constraint firstAttribute="bottom" secondItem="ufk-Iq-p1G" secondAttribute="bottom" constant="10" id="7Qv-ri-Mzf"/>
+                                                <constraint firstItem="ufk-Iq-p1G" firstAttribute="leading" secondItem="MMW-wU-gge" secondAttribute="leading" constant="10" id="RwF-5I-BQz"/>
+                                                <constraint firstAttribute="trailing" secondItem="ufk-Iq-p1G" secondAttribute="trailing" constant="10" id="els-hq-fIv"/>
+                                                <constraint firstItem="ufk-Iq-p1G" firstAttribute="top" secondItem="MMW-wU-gge" secondAttribute="top" constant="10" id="gSE-h9-J7g"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="ComicsView" destination="ufk-Iq-p1G" id="dYd-Vb-fOv"/>
                                             <outlet property="comicsDescription" destination="eUR-It-hUJ" id="Vcc-pD-rDA"/>
                                             <outlet property="comicsImage" destination="Ncd-q9-u0t" id="OVr-Nm-Ojy"/>
                                             <outlet property="comicsTitle" destination="OTY-Fh-Vme" id="eiW-tS-K6b"/>
