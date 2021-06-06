@@ -28,8 +28,6 @@ class ComicsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         comicsImage.clipsToBounds = true
-        //comicsImage.contentMode = .scaleAspectFill
-        comicsImage.layer.cornerRadius = 8.0
         
         contentView.addSubview(comicsImage)
         

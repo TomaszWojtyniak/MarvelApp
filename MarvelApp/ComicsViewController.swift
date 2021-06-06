@@ -66,6 +66,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.comicsImage.layer.cornerRadius = 8.0
         
+        
         let title = results[indexPath.row].title
         let desc = results[indexPath.row].description ?? " "
         let availableCreators = results[indexPath.row].creators.available
@@ -95,9 +96,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         
         let imageArray = results[indexPath.row].images
-        print(title)
         if imageArray!.count == 0{
-            print("no image")
         } else{
             let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
             cell.configure(with: imageURLString)
@@ -132,7 +131,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 200
     }
     
     
