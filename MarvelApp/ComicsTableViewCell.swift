@@ -20,6 +20,8 @@ class ComicsTableViewCell: UITableViewCell {
 
     @IBOutlet var ComicsView: UIView!
     
+    static let imageIdentifier = "ImageViewCell"
+    
     
 
     
@@ -27,9 +29,7 @@ class ComicsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        comicsImage.clipsToBounds = true
-        
-        contentView.addSubview(comicsImage)
+
         
         
     }
@@ -43,9 +43,7 @@ class ComicsTableViewCell: UITableViewCell {
         superview?.layoutSubviews()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
+
     
     func configure(with urlString: String){
         guard let url = URL(string: urlString) else {

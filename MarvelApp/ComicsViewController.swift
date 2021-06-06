@@ -97,6 +97,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let imageArray = results[indexPath.row].images
         if imageArray!.count == 0{
+            cell.configure(with: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADRCAMAAAAquaQNAAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuxZIAAeHuCGgAAAAASUVORK5CYII=")
         } else{
             let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
             cell.configure(with: imageURLString)
@@ -125,6 +126,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         ComicsTableView.separatorStyle = .none
         ComicsTableView.showsVerticalScrollIndicator = false
+        ComicsTableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: ComicsTableViewCell.imageIdentifier)
         fetchCovers()
         
 
