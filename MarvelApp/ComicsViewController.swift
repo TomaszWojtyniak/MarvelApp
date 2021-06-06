@@ -60,18 +60,20 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.ComicsView.layer.shadowColor = UIColor.black.cgColor
         cell.ComicsView.layer.shadowRadius = 10
 
-        cell.ComicsView.layer.shadowOpacity = 0.05
+        cell.ComicsView.layer.shadowOpacity = 0.1
         cell.ComicsView.layer.masksToBounds = false;
         cell.ComicsView.clipsToBounds = false;
         
+        cell.comicsImage.layer.cornerRadius = 8.0
+        
         let title = results[indexPath.row].title
-        let desc = results[indexPath.row].description ?? "No description "
+        let desc = results[indexPath.row].description ?? " "
         let availableCreators = results[indexPath.row].creators.available
         
         let countCreators = results[indexPath.row].creators.items?.count
 
         if availableCreators == 0{
-            cell.comicsWriter.text = "no writers"
+            cell.comicsWriter.text = " "
         } else {
             var allCreators = ""
             for i in 0..<countCreators!{
@@ -83,7 +85,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             }
             if allCreators == ""{
-                cell.comicsWriter.text = "no writers"
+                cell.comicsWriter.text = " "
             } else {
                 cell.comicsWriter.text = allCreators
             }
@@ -92,8 +94,19 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 
         
+        let imageArray = results[indexPath.row].images
+        print(title)
+        if imageArray!.count == 0{
+            print("no image")
+        } else{
+            let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
+            cell.configure(with: imageURLString)
+        }
+        
+        
+        
+        
         cell.comicsTitle.text = title
-        //cell.comicsWriter.text = String(creators)
         cell.comicsDescription.sizeToFit()
         cell.comicsDescription.text = desc
 
@@ -119,7 +132,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 250
     }
     
     
@@ -130,10 +143,17 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let urlString = "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=080a502746c8a60aeab043387a56eef0&hash=6edc18ab1a954d230c1f03c590d469d2&limit=25&offset=0&orderBy=-onsaleDate"
     
     func fetchCovers(){
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        config.httpAdditionalHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "914341525b1b3e445c89b40c38442a2b8d0680f7"
+        ]
         guard let url = URL(string: urlString) else {
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        let task = session.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {
                 return
             }
@@ -148,7 +168,7 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error)
             }
             
-            //network call is successful
+            
         }
         
         task.resume()
