@@ -33,10 +33,8 @@ class ComicsTableViewCell: UITableViewCell {
     }
     
 
-}
-
-extension UIView{
     
 }
+
 
 

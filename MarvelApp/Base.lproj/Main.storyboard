@@ -36,7 +36,7 @@
                                                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufk-Iq-p1G">
                                                     <rect key="frame" x="10" y="10" width="338" height="280"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-Fh-Vme">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-Fh-Vme">
                                                             <rect key="frame" x="132" y="8.0000000000000018" width="198" height="28.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,10 +65,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="5uX-FT-aPQ" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="375-tQ-4qx"/>
+                                                        <constraint firstItem="5uX-FT-aPQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="8" symbolic="YES" id="375-tQ-4qx"/>
                                                         <constraint firstItem="Ncd-q9-u0t" firstAttribute="top" secondItem="ufk-Iq-p1G" secondAttribute="top" id="3hp-4b-lg3"/>
                                                         <constraint firstItem="OTY-Fh-Vme" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="DUJ-ny-WSE"/>
                                                         <constraint firstAttribute="trailing" secondItem="OTY-Fh-Vme" secondAttribute="trailing" constant="8" id="Iwz-xq-rpW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5uX-FT-aPQ" secondAttribute="trailing" constant="98.333333333333314" id="Jnh-iS-pDQ"/>
                                                         <constraint firstItem="eUR-It-hUJ" firstAttribute="leading" secondItem="Ncd-q9-u0t" secondAttribute="trailing" constant="12" id="K6K-ga-Yd8"/>
                                                         <constraint firstAttribute="trailing" secondItem="eUR-It-hUJ" secondAttribute="trailing" constant="8" id="Lqh-vu-fkK"/>
                                                         <constraint firstItem="5uX-FT-aPQ" firstAttribute="top" secondItem="OTY-Fh-Vme" secondAttribute="bottom" constant="8" id="ORv-4H-Hlf"/>
