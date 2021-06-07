@@ -18,6 +18,7 @@ struct APIResponse: Codable {
 }
 
 struct Data: Codable {
+    let count: Int
     let results: [Result]
 }
 

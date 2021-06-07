@@ -16,6 +16,7 @@
 		40270F39266A44F500556FA6 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40270F38266A44F500556FA6 /* MarvelAppUITests.swift */; };
 		40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E25708266B981900D8B0A8 /* ComicsViewController.swift */; };
 		40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */; };
+		40E2570F266E5A8800D8B0A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		40270F3A266A44F500556FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E25708266B981900D8B0A8 /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
+		40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				40270F1C266A44E800556FA6 /* Main.storyboard */,
 				40E25708266B981900D8B0A8 /* ComicsViewController.swift */,
 				40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */,
+				40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */,
 				40270F1F266A44F400556FA6 /* Assets.xcassets */,
 				40270F21266A44F400556FA6 /* LaunchScreen.storyboard */,
 				40270F24266A44F400556FA6 /* Info.plist */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E2570F266E5A8800D8B0A8 /* SearchViewController.swift in Sources */,
 				40270F17266A44E800556FA6 /* AppDelegate.swift in Sources */,
 				40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */,
 				40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */,

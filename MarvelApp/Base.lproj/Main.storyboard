@@ -139,22 +139,108 @@
             </objects>
             <point key="canvasLocation" x="-2609" y="-517"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="97J-RA-BWb">
             <objects>
-                <viewController id="inb-EK-xmt" sceneMemberID="viewController">
+                <viewController id="inb-EK-xmt" customClass="SearchViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HXa-Ps-3Sj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eY3-83-z5c">
+                                <rect key="frame" x="16" y="138" width="358" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ComicsCell" rowHeight="300" id="EOc-wE-we8" customClass="ComicsTableViewCell" customModule="MarvelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="358" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EOc-wE-we8" id="Xdx-rx-4d5">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-sE-TSc">
+                                                    <rect key="frame" x="10" y="10" width="338" height="280"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vS7-Qx-ieO">
+                                                            <rect key="frame" x="132" y="7.9999999999999982" width="198" height="26.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-SL-vxA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="280"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="6wW-4E-aoy"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="writer by ananana" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-rV-7fX">
+                                                            <rect key="frame" x="132" y="42.333333333333336" width="198" height="15.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-ns-Che">
+                                                            <rect key="frame" x="132" y="66" width="198" height="206"/>
+                                                            <string key="text">Jen Walters used to fight for justice in the courtroom as a lawyer and outside of it as the super hero known as She-Hulk. But after the events of Civil War, Jen's Hulk persona has changed.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="vS7-Qx-ieO" firstAttribute="leading" secondItem="O6H-SL-vxA" secondAttribute="trailing" constant="12" id="5tf-lA-OxX"/>
+                                                        <constraint firstItem="vS7-Qx-ieO" firstAttribute="top" secondItem="Uxg-sE-TSc" secondAttribute="top" constant="8" id="7Nj-bH-45t"/>
+                                                        <constraint firstItem="Qy3-rV-7fX" firstAttribute="leading" secondItem="O6H-SL-vxA" secondAttribute="trailing" constant="12" id="99j-4m-duv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vS7-Qx-ieO" secondAttribute="trailing" constant="8" id="Ez0-eb-aPC"/>
+                                                        <constraint firstItem="Qy3-rV-7fX" firstAttribute="top" secondItem="vS7-Qx-ieO" secondAttribute="bottom" constant="8" id="JSP-nk-ioV"/>
+                                                        <constraint firstItem="8lw-ns-Che" firstAttribute="top" secondItem="Qy3-rV-7fX" secondAttribute="bottom" constant="8" id="KM6-42-cc5"/>
+                                                        <constraint firstItem="8lw-ns-Che" firstAttribute="leading" secondItem="O6H-SL-vxA" secondAttribute="trailing" constant="12" id="Qod-bo-qRF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qy3-rV-7fX" secondAttribute="trailing" constant="8" id="SU3-7t-DzA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="O6H-SL-vxA" secondAttribute="bottom" id="VbG-ux-tzp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8lw-ns-Che" secondAttribute="bottom" constant="8" id="Wf2-SG-Uip"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8lw-ns-Che" secondAttribute="trailing" constant="8" id="Yx2-sN-Wg2"/>
+                                                        <constraint firstItem="O6H-SL-vxA" firstAttribute="top" secondItem="Uxg-sE-TSc" secondAttribute="top" id="m7d-Np-i3U"/>
+                                                        <constraint firstItem="O6H-SL-vxA" firstAttribute="leading" secondItem="Uxg-sE-TSc" secondAttribute="leading" id="zMR-0D-bCg"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Uxg-sE-TSc" secondAttribute="bottom" constant="10" id="74b-8b-eCX"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uxg-sE-TSc" secondAttribute="trailing" constant="10" id="WqA-nr-pWn"/>
+                                                <constraint firstItem="Uxg-sE-TSc" firstAttribute="top" secondItem="Xdx-rx-4d5" secondAttribute="top" constant="10" id="cpy-Nh-FoW"/>
+                                                <constraint firstItem="Uxg-sE-TSc" firstAttribute="leading" secondItem="Xdx-rx-4d5" secondAttribute="leading" constant="10" id="hto-CO-eY7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ComicsView" destination="Uxg-sE-TSc" id="Fon-yG-hP6"/>
+                                            <outlet property="comicsDescription" destination="8lw-ns-Che" id="htZ-5V-Dk6"/>
+                                            <outlet property="comicsImage" destination="O6H-SL-vxA" id="Inf-JJ-Qv4"/>
+                                            <outlet property="comicsTitle" destination="vS7-Qx-ieO" id="IWr-O9-Sth"/>
+                                            <outlet property="comicsWriter" destination="Qy3-rV-7fX" id="kzy-SH-64r"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0Xx-8c-XkY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Xx-8c-XkY" firstAttribute="trailing" secondItem="eY3-83-z5c" secondAttribute="trailing" constant="16" id="L5N-nk-70b"/>
+                            <constraint firstItem="0Xx-8c-XkY" firstAttribute="bottom" secondItem="eY3-83-z5c" secondAttribute="bottom" constant="16" id="UMu-vM-MR6"/>
+                            <constraint firstItem="eY3-83-z5c" firstAttribute="leading" secondItem="0Xx-8c-XkY" secondAttribute="leading" constant="16" id="glX-9P-dPh"/>
+                            <constraint firstItem="eY3-83-z5c" firstAttribute="top" secondItem="0Xx-8c-XkY" secondAttribute="top" constant="94" id="iPl-Qb-bfW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="search_icon" id="Cue-T5-0Ex"/>
                     <navigationItem key="navigationItem" id="bQg-ad-vba"/>
+                    <connections>
+                        <outlet property="ComicsTableView" destination="eY3-83-z5c" id="9BS-G7-WrM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntE-Ou-kNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="380"/>
+            <point key="canvasLocation" x="-1986.1538461538462" y="379.62085308056868"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
