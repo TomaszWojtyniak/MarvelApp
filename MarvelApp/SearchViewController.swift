@@ -13,7 +13,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
     var results: [Result] = []
     var hideTableView = true
     var hidesearchEmptyText = false
-    var hiddenBook = false
+    var hiddenbook = false
     
     @IBOutlet var ComicsTableView: UITableView!
     
@@ -21,28 +21,28 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     let emptySearchText = UILabel()
     
-    let image = UIImage(imageLiteralResourceName: "book-open_icon")
+    var book = UIImageView(image: UIImage(imageLiteralResourceName: "book-open_icon"))
     
-    var book = UIImageView()
 
     var message = "Start typing to find particular comics"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        book = UIImageView(image: image)
-        view.addSubview(book)
         
         searchBar.delegate = self
         view.addSubview(searchBar)
         emptySearchText.text = message
         view.addSubview(emptySearchText)
+
         
+        view.addSubview(book)
+
         emptySearchText.isHidden =  hidesearchEmptyText
         ComicsTableView.isHidden = hideTableView
-        print(hiddenBook)
-        book.isHidden = hiddenBook
-        print(String(book.isHidden))
+        book.isHidden = hiddenbook
+
+        
         
         ComicsTableView.delegate = self
         ComicsTableView.dataSource = self
@@ -51,7 +51,12 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         ComicsTableView.showsVerticalScrollIndicator = false
         ComicsTableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: ComicsTableViewCell.imageIdentifier)
         
-    
+        
+        ComicsTableView.keyboardDismissMode = .onDrag
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,6 +64,8 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         searchBar.layer.borderWidth = 1
         searchBar.layer.borderColor = UIColor.white.cgColor
         searchBar.frame = CGRect(x: 10, y: view.safeAreaInsets.top + 20, width: view.frame.size.width-20, height: 40)
+        searchBar.placeholder = "Search for a comic book"
+        searchBar.tintColor = UIColor.systemBlue
         
         emptySearchText.textAlignment = .center
         emptySearchText.numberOfLines = 0
@@ -74,11 +81,13 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         searchBar.resignFirstResponder()
         if let text = searchBar.text {
             DispatchQueue.main.async {
-                self.hiddenBook = true
                 self.hideTableView = false
                 self.hidesearchEmptyText = true
+                self.hiddenbook = true
                 self.viewDidLoad()
             }
+            
+            
             results = []
             fetchCovers(query: text)
         } else {
@@ -187,7 +196,8 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
                             self?.hideTableView = true
                             self?.message = "There is no comic book \"\(query)\" in our library. Check the spelling and try again. "
                             self?.hidesearchEmptyText = false
-                            self?.hiddenBook = false
+                            self?.hiddenbook = false
+                            self?.book = UIImageView(image: UIImage(imageLiteralResourceName: "book-open_icon"))
                             self?.viewDidLoad()
                         }
                     } else {
