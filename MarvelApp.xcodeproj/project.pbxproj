@@ -17,6 +17,8 @@
 		40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E25708266B981900D8B0A8 /* ComicsViewController.swift */; };
 		40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */; };
 		40E2570F266E5A8800D8B0A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */; };
+		F90804F9269D916900DCDA08 /* MarvelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90804F8269D916900DCDA08 /* MarvelModel.swift */; };
+		F90804FE269D925E00DCDA08 /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90804FD269D925E00DCDA08 /* MainPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		40E25708266B981900D8B0A8 /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
 		40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F90804F8269D916900DCDA08 /* MarvelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelModel.swift; sourceTree = "<group>"; };
+		F90804FD269D925E00DCDA08 /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +107,12 @@
 		40270F15266A44E800556FA6 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				F90804FC269D921300DCDA08 /* ViewModels */,
+				F90804FB269D91F300DCDA08 /* Views */,
+				F90804FA269D91EB00DCDA08 /* Models */,
 				40270F16266A44E800556FA6 /* AppDelegate.swift */,
 				40270F18266A44E800556FA6 /* SceneDelegate.swift */,
 				40270F1C266A44E800556FA6 /* Main.storyboard */,
-				40E25714266F6C4E00D8B0A8 /* HomePage */,
-				40E25715266F6C7300D8B0A8 /* SearchPage */,
 				40270F1F266A44F400556FA6 /* Assets.xcassets */,
 				40270F21266A44F400556FA6 /* LaunchScreen.storyboard */,
 				40270F24266A44F400556FA6 /* Info.plist */,
@@ -133,21 +138,30 @@
 			path = MarvelAppUITests;
 			sourceTree = "<group>";
 		};
-		40E25714266F6C4E00D8B0A8 /* HomePage */ = {
+		F90804FA269D91EB00DCDA08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F90804F8269D916900DCDA08 /* MarvelModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F90804FB269D91F300DCDA08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				40E25708266B981900D8B0A8 /* ComicsViewController.swift */,
 				40E2570A266B9FD100D8B0A8 /* ComicsTableViewCell.swift */,
-			);
-			name = HomePage;
-			sourceTree = "<group>";
-		};
-		40E25715266F6C7300D8B0A8 /* SearchPage */ = {
-			isa = PBXGroup;
-			children = (
 				40E2570E266E5A8700D8B0A8 /* SearchViewController.swift */,
 			);
-			path = SearchPage;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F90804FC269D921300DCDA08 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F90804FD269D925E00DCDA08 /* MainPageViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90804F9269D916900DCDA08 /* MarvelModel.swift in Sources */,
 				40E2570F266E5A8800D8B0A8 /* SearchViewController.swift in Sources */,
 				40270F17266A44E800556FA6 /* AppDelegate.swift in Sources */,
+				F90804FE269D925E00DCDA08 /* MainPageViewModel.swift in Sources */,
 				40E25709266B981900D8B0A8 /* ComicsViewController.swift in Sources */,
 				40E2570B266B9FD100D8B0A8 /* ComicsTableViewCell.swift in Sources */,
 				40270F19266A44E800556FA6 /* SceneDelegate.swift in Sources */,

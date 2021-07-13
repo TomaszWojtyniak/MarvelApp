@@ -127,12 +127,12 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         cell.comicsImage.layer.cornerRadius = 8.0
         
         let imageArray = results[indexPath.row].images
-        if imageArray!.count == 0{  //if comic dont have a cover display white background image
-            cell.configure(with: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADRCAMAAAAquaQNAAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuxZIAAeHuCGgAAAAASUVORK5CYII=")
-        } else{
-            let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
-            cell.configure(with: imageURLString) //Get image from url
-        }
+//        if imageArray!.count == 0{  //if comic dont have a cover display white background image
+//            cell.configure(with: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADRCAMAAAAquaQNAAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuxZIAAeHuCGgAAAAASUVORK5CYII=")
+//        } else{
+//            let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
+//            cell.configure(with: imageURLString) //Get image from url
+//        }
     
 
         return cell
