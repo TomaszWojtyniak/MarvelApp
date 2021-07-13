@@ -9,12 +9,15 @@ import Foundation
 import UIKit
 
 public class MainPageViewModel {
-    private let comicBook: ComicBook
+    var comicBook: ComicBook?
     
     
-    init(comicBook: ComicBook? = nil) {
-        self.comicBook = comicBook!
-    }
+    init(model: ComicBook? = nil) {
+        if let inputModel = model{
+          comicBook = inputModel
+        }
+        fetchData()
+      }
     
     private let urlString = "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=080a502746c8a60aeab043387a56eef0&hash=6edc18ab1a954d230c1f03c590d469d2&limit=25&offset=0&orderBy=-onsaleDate"
     
@@ -22,8 +25,8 @@ public class MainPageViewModel {
     var results: [Result] = []
         
     public func title(indexPathRow: Int) -> String {
-        comicBook.title = results[indexPathRow].title
-        return comicBook.title
+        comicBook!.title = results[indexPathRow].title
+        return comicBook!.title
     }
     
     public func writters(indexPathRow: Int) -> String {
@@ -32,7 +35,7 @@ public class MainPageViewModel {
         let countCreators = results[indexPathRow].creators.items?.count
 
         if availableCreators == 0{
-            comicBook.creators =  " "
+            comicBook!.creators =  " "
         } else {
             var allCreators = ""
             for i in 0..<countCreators!{
@@ -43,14 +46,14 @@ public class MainPageViewModel {
                 }
             }
             if allCreators == ""{
-                comicBook.creators =  " "
+                comicBook!.creators =  " "
             } else {
-                comicBook.creators =  allCreators
+                comicBook!.creators =  allCreators
             }
         }
 
         
-        return comicBook.creators
+        return comicBook!.creators
     }
     
     public func cover(indexPathRow: Int) -> UIImage {
@@ -63,13 +66,13 @@ public class MainPageViewModel {
             configure(with: imageURLString) //Get image from url
         }
     
-        return comicBook.image
+        return comicBook!.image
     }
     
     public func description(indexPathRow: Int) -> String {
         
-        comicBook.description = results[indexPathRow].description ?? " "
-        return comicBook.description
+        comicBook!.description = results[indexPathRow].description ?? " "
+        return comicBook!.description
     }
     
     func fetchData(){
@@ -119,7 +122,7 @@ public class MainPageViewModel {
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
                 //comicsImage.image = image
-                self.comicBook.image = image!
+                self.comicBook!.image = image!
             }
             
         }
