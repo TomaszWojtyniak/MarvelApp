@@ -7,36 +7,38 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 public class MainPageViewModel {
-    var comicBook: ComicBook?
     
     
-    init(model: ComicBook? = nil) {
-        if let inputModel = model{
-          comicBook = inputModel
-        }
+    init() {
         fetchData()
-      }
+    }
     
     private let urlString = "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=080a502746c8a60aeab043387a56eef0&hash=6edc18ab1a954d230c1f03c590d469d2&limit=25&offset=0&orderBy=-onsaleDate"
     
     
     var results: [Result] = []
+    
+    var isLoaded = false
+    
+
         
     public func title(indexPathRow: Int) -> String {
-        comicBook!.title = results[indexPathRow].title
-        return comicBook!.title
+        
+        return results[indexPathRow].title
     }
     
     public func writters(indexPathRow: Int) -> String {
         let availableCreators = results[indexPathRow].creators.available //check API available value to see if creators are named
-        
+
         let countCreators = results[indexPathRow].creators.items?.count
 
-        if availableCreators == 0{
-            comicBook!.creators =  " "
-        } else {
+        var creators =  " "
+        
+        if availableCreators != 0{
+
             var allCreators = ""
             for i in 0..<countCreators!{
                 let creators = results[indexPathRow].creators.items?[i]
@@ -46,33 +48,32 @@ public class MainPageViewModel {
                 }
             }
             if allCreators == ""{
-                comicBook!.creators =  " "
+                creators =  " "
             } else {
-                comicBook!.creators =  allCreators
+                creators =  allCreators
             }
         }
 
-        
-        return comicBook!.creators
+
+        return creators
     }
-    
-    public func cover(indexPathRow: Int) -> UIImage {
-        
-        let imageArray = results[indexPathRow].images
-        if imageArray!.count == 0{  //if comic dont have a cover display white background image
-            configure(with: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADRCAMAAAAquaQNAAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuxZIAAeHuCGgAAAAASUVORK5CYII=")
-        } else{
-            let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
-            configure(with: imageURLString) //Get image from url
-        }
-    
-        return comicBook!.image
-    }
+
+//    public func cover(indexPathRow: Int) -> UIImage {
+//
+//        let imageArray = results[indexPathRow].images
+//        if imageArray!.count == 0{  //if comic dont have a cover display white background image
+//            return image
+//        } else{
+//            let imageURLString = (imageArray?[0].path)! + "." + (imageArray?[0].extension)!
+//            configure(urlString: imageURLString)//Get image from url
+//            return image
+//        }
+//
+//    }
     
     public func description(indexPathRow: Int) -> String {
-        
-        comicBook!.description = results[indexPathRow].description ?? " "
-        return comicBook!.description
+
+        return results[indexPathRow].description ?? " "
     }
     
     func fetchData(){
@@ -98,7 +99,10 @@ public class MainPageViewModel {
                 let JSONResult = try JSONDecoder().decode(APIResponse.self, from: data)
                 DispatchQueue.main.async {
                     self?.results = JSONResult.data.results //get data from API and store them into the results array
-                    //self?.ComicsTableView.reloadData() //reload to display
+                    self?.isLoaded = true
+                    print("data loaded")
+                    
+                    
                     
                 }
             } catch {
@@ -111,23 +115,14 @@ public class MainPageViewModel {
         task.resume()
     }
     
-    func configure(with urlString: String){
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                //comicsImage.image = image
-                self.comicBook!.image = image!
-            }
-            
-        }
-        task.resume()
+    func configure(urlString: String){
+        
+        //KF.url(urlString).set(to: image)
+        
+        
+        
     }
     
     
 }
+
