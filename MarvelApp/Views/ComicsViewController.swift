@@ -8,29 +8,20 @@
 import UIKit
 
 
-class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    // MARK: - variables and IBOutlets
+class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet var ComicsTableView: UITableView!
     
     var comicsViewModel = MainPageViewModel()
     
-    var results: [Result] = []
-    
-    
-    // MARK: - TableView functions
-    
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
         ComicsTableView.delegate = self
         ComicsTableView.dataSource = self
         ComicsTableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: ComicsTableViewCell.imageIdentifier)
-        
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComicsCell") as! ComicsTableViewCell
@@ -45,28 +36,41 @@ class ComicsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.ComicsView.layer.shadowColor = UIColor.black.cgColor
         cell.ComicsView.layer.shadowRadius = 10
         cell.ComicsView.layer.shadowOpacity = 0.1
-        cell.ComicsView.layer.masksToBounds = false;
-        cell.ComicsView.clipsToBounds = false;
-        
+        cell.ComicsView.layer.masksToBounds = false
+        cell.ComicsView.clipsToBounds = false
         cell.comicsDescription.sizeToFit()
         
         cell.comicsImage.layer.cornerRadius = 8.0
         
-        cell.comicsTitle.text = comicsViewModel.title(indexPathRow: indexPath.row)
+        if comicsViewModel.isLoaded == true{
+            cell.comicsTitle.text = comicsViewModel.title(indexPathRow: indexPath.row)
+            cell.comicsDescription.text = comicsViewModel.description(indexPathRow: indexPath.row)
+            cell.comicsWriter.text = comicsViewModel.writters(indexPathRow: indexPath.row)
+            //cell.comicsImage.image = comicsViewModel.cover(indexPathRow: indexPath.row)
+            
+        } else {
+            reloadData()
+        }
+        
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count //count numbers of comics from API request
+
+        print(comicsViewModel.results.count)
+        return 24 //count numbers of comics from API request
     }
     
-
-
+    func reloadData(){
+        
+            ComicsTableView.reloadData() //reload to display
+        
+    
+    }
 }
 
 
